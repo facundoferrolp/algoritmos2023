@@ -1,0 +1,60 @@
+TP 2
+Ejercicio 2
+3c) De una pila de tarjetas numeradas informar la cantidad de apariciones del número N.
+
+Programa pilaDeTarjetas
+	variables
+		numeroBuscado := 2
+		total := 0
+		c //variable para la carta
+	Comenzar
+	mientras(hay carta en pila) hacer
+		Comenzar 
+		c :=  tomarCarta
+		si (c = numeroBuscado) entonces
+			total := total + 1
+
+	fin
+	imprimir(total)
+Fin
+
+4d) Encontrar e informar la posición del naipe con menor número en una pila de naipes.
+
+Programa encontrarPosicionNaipe
+variables
+	posicion := -1
+	menorNaipe := 99
+	posicionActual := 0
+	naipe 
+Comenzar
+	mientras(hay naipe en mazo) hacer
+		Comenzar 
+		naipe :=  tomarNaipe()
+		posicionActual :=  posicionActual +1
+		si (naipe < menorNaipe) entonces
+			comenzar
+			posicion := posicionActual
+			menorNaipe := naipe
+		fin
+fin
+imprimir(“el naipe con menor valor esta en la posicion” posicion)
+Fin
+
+7) Realizar el diagrama de ﬂujo del algoritmo que calcula e imprime la suma de los números impares comprendidos entre 5 y 97.
+
+Programa encontrarPosicionNaipe
+variables
+	numeroActual := 5
+	Total := 0
+Comenzar
+	mientras(numeroActual < 97) hacer
+		Comenzar 
+		si (numeroActual es impar) entonces
+			comenzar
+			Total := total + numeroActual;
+		Fin
+	numeroActual :=  numeroActual + 1;
+
+fin
+imprimir(“La suma de numeros impares entre 5 y 97 es ” total)
+Fin
