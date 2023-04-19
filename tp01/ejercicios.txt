@@ -1,0 +1,162 @@
+
+3) -----------------------------------
+a) Dado un palabra decir si la misma es palindromo (capicúa).
+Programa palindromo
+variable cadena = "anana";
+inicio:=0;
+fin:= cadena.longitud () //nos da la longitud de la cadena
+comenzar
+	mientras (inicio < fin) y (esPalindromo ) hacer
+	comenzar
+	    si cadena(inicio) <> cadena(fin) tntonces
+	        esPalindromo = false
+	    fin := fin -1
+	    inicio := inicio +1
+	fin
+
+	si esPalindromo
+	    imprimir "La cadena es un palíndromo"
+	sino
+	    imprimir "La cadena no es un palíndromo"
+fin
+
+b)De una pila de tarjetas numeradas informar cual es la mayor.
+programa tarjetas
+variables
+	c
+	mayor := -1;
+comenzar
+
+	mientras (hay tarjetas en pila) hacer
+		comenzar
+			c := tomarTarjeta de pila
+			si(c > mayor) entonces
+				mayor := c
+		fin
+	imprimir 'la tarjeta mayor es' mayor
+fin
+
+c)De una pila de tarjetas numeradas informar la cantidad de apariciones del número N.
+programa tarjetas
+variables
+	c
+	n := X // numero a buscar
+	cantidadDeNumerosN:=0
+comenzar
+
+	mientras (hay tarjetas en pila) hacer
+		comenzar
+			c := tomarTarjeta de pila
+			si(c = n )entonces
+				cantidadDeNumerosN := cantidadDeNumeros +1
+		fin
+	imprimir 'la cantidad de tarjestas con numero n es' cantidadDeNumerosN
+fin
+
+4) -----------------------------------
+a) Pasar todas las cartas de una pila de naipes C1 de n naipes (puede no
+estar el mazo completo) a otra C2 excepto aquellos que coincidan con algún palo X.
+
+programa naipes
+variables
+	c
+	palo := corazones // numero a buscar
+	C1,C2 // pilas de naipes
+comenzar
+
+	mientras (hay tarjetas en C1) hacer
+		comenzar
+			c := tomarTarjeta de pila C1
+			si(c es del palo  )entonces //ahi hacemos referencia a la variable palo
+				poner c en C2
+		fin
+fin
+
+b) Dada una “tirada” de dados, obtener la suma de los lados superiores
+programa naipes
+variables
+	d1,d2 // datos
+	suma := 0
+comenzar
+	tirar dado d1;
+	tirar dado d2;
+	suma := d1 cara superior + d2 cara superior
+	imprimir 'la suma es' suma
+fin
+
+c) Dada una “tirada” de dados, obtener la suma de los lados inferiores
+programa naipes
+variables
+	d1,d2 // datos
+	suma := 0
+comenzar
+	tirar dado d1;
+	tirar dado d2;
+	suma := 7 - (d1 cara superior) + 7 - (d2 cara superior)
+	imprimir 'la suma es de las caras inferiores es' suma
+fin
+
+d) Encontrar e informar la posición del naipe con menor número en una pila de naipes.
+
+Programa encontrarPosicionNaipe
+variables
+	posicion := -1
+	menorNaipe := 99
+	posicionActual := 0
+	naipe 
+Comenzar
+	mientras(hay naipe en mazo) hacer
+		Comenzar 
+		naipe :=  tomarNaipe()
+		posicionActual :=  posicionActual +1
+		si (naipe < menorNaipe) entonces
+			comenzar
+			posicion := posicionActual
+			menorNaipe := naipe
+		fin
+fin
+
+5) -----------------------------------
+ Diseñar el algoritmo en pseudocódigo que muestre el mayor de tres números enteros entrados por teclado.
+Programa cualEsMayor
+variables
+	a,b,c 
+Comenzar
+	leer(a)
+	leer(b)
+	leer(c)
+	si (a <= b) y (a <= c)entonces 
+		imprimir 'el mayor es ' a
+	si (b <= a) y (b <= c)entonces 
+		imprimir 'el mayor es ' b
+	si (c <= b) y (c <= b)entonces 
+		imprimir 'el mayor es ' c
+fin
+
+6) ----------------------------
+Diseñar el algoritmo ( pseudocódigo) que calcule la media de una serie de números (positivos o negativos) entrados por teclado. El ingreso de un valor igual a cero indicará el ﬁnal del ingreso de datos.
+
+Programa mediaAritmetica
+variables
+	n
+	cantidad := 0
+	total := 0
+	media := 0
+Comenzar
+	leer(n)
+	mientras (n <> 0 ) hacer
+	comenzar
+		cantidad := cantidad +1
+		total := total n
+		leer(n)
+	fin
+
+	// verifica para no dividir por 0, por si ingresa 0 la primera vez
+	si (cantidad > 0) entonces
+		media := total div cantidad
+
+	
+	imprimir 'la media es ' media
+	
+fin
+
