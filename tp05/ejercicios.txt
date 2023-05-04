@@ -1,0 +1,57 @@
+
+program Ejercicio6;
+ var i:Integer;
+begin
+  for i:= 1 to 100 do
+    if (i mod 5 = 0)then
+        writeln('el numero ',i, ' es divisible por 5');
+end.
+
+
+------------------------------------------------------
+
+program Ejercicio21;
+ var max1,min1,max2,min2,n:Integer;
+    
+begin
+  max1 := -1;
+  min1 := 1000;
+  max2 := -1;
+  min2 := 1000;
+  readln(n);
+  while(n <> 999) do
+    begin
+        if (n > max1)then
+            begin
+                max2 := max1;
+                max1 := n;
+            end;
+        if (n < min1)then
+            begin
+                min2 := min1;
+                min1 := n;
+            end;
+        readln(n);
+    end;
+    writeln('minimos ',min1,' ',min2);
+    writeln('maximo ',max1,' ',max2);
+
+end.
+
+
+------------------------------------------------------
+
+program Ejercicio22;
+ var n,i:Integer;
+     c:String;     
+    
+begin
+  writeln('Ingresa la cantidad de veces');
+  readln(n);
+  writeln('Ingresa el string');
+  readln(c);
+  for i:=1 to n-1 do
+    writeln(c);
+
+end.
+
