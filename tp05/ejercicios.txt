@@ -55,3 +55,66 @@ begin
 
 end.
 
+
+
+Primo:
+
+
+program Primo;
+var
+  n, i: integer;
+  esPrimo: boolean;
+begin
+  write('Ingrese un numero entero positivo: ');
+  readln(n);
+
+  if (n < 2) then
+    writeln(n, ' no es un numero primo.')
+  else
+	  begin
+	  esPrimo := true;
+	  i := 2;
+	  while ((i <= n div 2) and esPrimo)do
+	  begin
+	    if (n mod i = 0) then
+	    begin
+	      esPrimo := false;
+	    end;
+	    i := i + 1;
+	  end;
+  end;
+  if (esPrimo) then
+    writeln(n, ' es un numero primo.')
+  else
+    writeln(n, ' no es un numero primo.');
+end.
+
+Capicua
+
+program Capicua;
+
+var
+  palabra: string;
+  i, f: integer;
+  esCapicua: boolean;
+
+begin
+  write('Ingrese una palabra: ');
+  readln(palabra);
+  esCapicua := true;
+  i := 1;
+  f := length(palabra);
+
+  while ((i < f) and esCapicua) do
+  begin
+    if (palabra[i] <> palabra[f]) then
+      esCapicua := false;
+    i := i + 1;
+    f := f - 1;
+  end;
+
+  if (esCapicua) then
+    writeln(palabra, ' es capicua.')
+  else
+    writeln(palabra, ' no es capicua.');
+end.
