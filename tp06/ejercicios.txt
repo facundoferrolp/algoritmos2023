@@ -1,0 +1,247 @@
+{
+    Solicitar al usuario 50 números por consola e informar 
+    la cantidad de números pares,
+    impares, la cantidad total y el promedio.
+}
+program EjercicioTP6_1;
+    var n,i,cantPares,cantImpares,total:integer;
+begin
+  cantPares:=0;
+  cantImpares:= 0;
+   for i:= 1 to 4 do {donde va 4 ustedes pondrian 50}
+   begin
+        readln(n);
+        if (n mod 2 = 0)then    
+            cantPares := cantPares +1
+        else
+            cantImpares := cantImpares +1;
+        total := total +n;
+    end;
+    writeln('Cantidad de pares',cantPares);
+    writeln('Cantidad de impares',cantImpares);
+    writeln('Promedio ',total / 4);
+end.
+-------------------------------------------------------------------------------------
+{
+
+Leer palabras desde consola hasta que se ingrese la palabra fin,
+determinar qué palabra es la de mayor longitud, 
+recordad que para obtener la longitud de una palabra se debe utilizar
+el comando l := LENGTH(p) siendo p la palabra y
+dejaría en la variable l la longitud de la misma.
+
+}
+
+
+program EjemploTp6_2;
+var p,palabraMayorLongitud:String;
+    mayorLongitud,cant:integer;
+begin
+    mayorLongitud:=-1;
+    readln(p) ;
+    while(p <> 'fin') do
+        begin
+        if (LENGTH(p)>mayorLongitud)then
+        begin
+            mayorLongitud := LENGTH(p);
+            palabraMayorLongitud:= p;
+        end;
+        readln(p)
+    end;
+    writeln('la palabra de mayor logitud es ',palabraMayorLongitud)
+end.
+
+-------------------------------------------------------------------------------------
+
+{
+Lee números desde consola hasta que se ingrese el número 999, imprimir la suma
+de todos los números ingresados, el mayor de estos y el promedio.
+}
+program EjercicioTP6_3;
+    var n,mayor,total,cant:integer;
+begin
+    readln(n);
+    cant := 0;
+    total := 0;
+    mayor := -1;
+    while (n <> 999)do
+    begin
+        cant := cant +1;
+        total := total +n;
+        if (n > mayor )then
+            mayor := n;
+        readln(n);
+    end;
+    writeln('el mayor es',mayor);
+    writeln('el promedio es ', total / cant);
+end.
+-------------------------------------------------------------------------------------
+program EjercicioTP6_4;
+    var x1,y1,x2,y2,l1,l2,a,b:integer;
+    
+begin
+  writeln ('Ingrese x1');
+  readln(x1);
+  writeln ('Ingrese y1');
+  readln(y1);
+  writeln ('Ingrese x2');
+  readln(x2);
+  writeln ('Ingrese y2');
+  readln(y2);
+  l1 := x2 - x1;
+  l2 := y2 - y1;
+  writeln ('Ingrese a');
+  readln(a);
+  writeln ('Ingrese b');
+  readln(b);
+  writeln('El perimetro del rectangulo es', 2*l1 +  2*l2 );
+  if (a >= x1) AND (a <= x2) and (b >= y1) and (b <= y2) then 
+            writeln('el punto a,b esta en el rectangulo');
+  
+end.
+
+
+-------------------------------------------------------------------------------------
+{Leer palabras desde consola hasta que se ingrese la palabra fin, indicar la cantidad
+de palabras leídas, y aquellas que comienzan con vocal (recordad que haciendo p[1]
+se obtiene la primera letra del string p).}
+program EjemploTp6_5;
+var p:String;
+    cant:integer;
+begin
+    cant:=0;
+    readln(p) ;
+    while(p <> 'fin') do
+        begin
+        if (p[1]='a') OR(p[1]='e') OR (p[1]='i') OR (p[1]='o') OR (p[1]='u')then
+            cant := cant +1;
+        readln(p)
+    end;
+    writeln('la cantidad de palabrtas que empiezan con vocal es ',cant)
+end.
+
+-------------------------------------------------------------------------------------
+{Leer de consola un número, y luego leer palabras desde consola hasta que se
+ingrese la palabra fin, contar la cantidad de palabras que tiene la misma longitud del
+número ingresado, y luego contar las que tiene un longitud menor. Informar ambos
+valores.}
+program EjemploTp6_6;
+var p:String;
+    n,cantMismaLongitud,cantConMenorLong:integer;
+begin
+    cantMismaLongitud:=0;
+    cantConMenorLong:=0;
+    writeln('ingrese un numero');
+    readln(n) ;
+    writeln('Comience a ingresar palabras');
+    readln(p) ;
+    while(p <> 'fin') do
+        begin
+            if (Length(p)=n)then
+                cantMismaLongitud:= cantMismaLongitud +1;
+            if (Length(p)<n)then
+                cantConMenorLong := cantConMenorLong + 1;
+            
+            readln(p);
+      end;
+    writeln('la cantidad de palabras con longitud  ',n,'es ',cantMismaLongitud);
+    writeln('la cantidad de palabras con menor longitud  ',n,'es ',cantConMenorLong);
+    
+end
+
+-------------------------------------------------------------------------------------
+{
+
+Leer palabras desde consola hasta que se ingrese la palabra fin,
+informar al finalizar la cantidad de palabras de longitud par.
+
+}
+program EjemploTp6_7;
+var p:String;
+    cant:integer;
+begin
+    cant:=0;
+    readln(p) ;
+    while(p <> 'fin') do
+        begin
+        if (LENGTH(p)mod 2 = 0)then
+        begin
+            cant:= cant + 1;
+        end;
+        readln(p)
+    end;
+    writeln('Cantidad de palabres con longitud par  ',cant)
+end.
+
+-------------------------------------------------------------------------------------
+{
+
+Leer palabras desde consola hasta que se ingrese la palabra fin,
+informar al finalizar la cantidad de palabras de longitud impar.
+
+}
+program EjemploTp6_8;
+var p:String;
+    cant:integer;
+begin
+    cant:=0;
+    readln(p) ;
+    while(p <> 'fin') do
+        begin
+        if (LENGTH(p)mod 2 <> 0)then
+        begin
+            cant:= cant + 1;
+        end;
+        readln(p)
+    end;
+    writeln('Cantidad de palabres con longitud impar  ',cant)
+end.
+
+-------------------------------------------------------------------------------------
+{
+    Leer palabras desde consola hasta que se ingrese la palabra fin,
+    informar al finalizar
+    la cantidad de palabras de longitud múltiple de 10
+}
+program Tp6_9;
+    var p:String;
+        cant:integer;
+begin
+    cant := 0;
+    readln(p);
+    while(p <> 'fin')do
+    begin
+        if(length(p) mod 10 = 0)then    
+            cant := cant +1;
+        readln(p);
+    end;
+    writeln('la cantidad de palabras cuya es multiplo de 10 es ',cant);
+end.
+-------------------------------------------------------------------------------------
+{
+ Leer palabras desde consola hasta que se ingrese la palabra fin, informar al finalilzar
+la cantidad de veces que se ingreso la primera palabra, ejemplo:
+hola
+pepe
+hola
+pipo
+fin
+Debe informar 2, dado que hola se ingreso 2 veces, siendo hola la primera palabra
+ingresada.
+}
+program Tp6_10;
+    var p,primerPalabra:String;
+        cant:integer;
+        
+begin
+    cant := 0;
+    readln(p);
+    primerPalabra :=p;
+    while(p <> 'fin')do
+    begin
+        if (p = primerPalabra)then
+            cant := cant +1;
+        readln(p);
+    end;
+    writeln('la cantidad de palabras iguales a la primer palabra es ',cant);
+end.
